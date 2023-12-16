@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-box">
+            <form action="/" method="post">
+                <input type="text" placeholder="Enter your city" name="city" autocomplete="off">
+                <button type="submit" class="fa-solid fa-magnifying-glass"></button>
+            </form> 
+        </div>
+
+        <% if(locals.content) { %>
+            <div class="weather-body">
+                <img src=<%=img%> class="weather-image" alt="clouds image">
+                <div class="weather-box">
+                    <p class="temperature"><%= temperature %><sup>°C</sup></p>
+                    <p class="description"><%= description %></p>
+                </div>
+            </div>
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="text">
+                        <span class="value"><%= humidityValue %>%</span>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind-speed">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span class="value"><%= windSpeed  %> Km/H</span>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+
+        <% if(locals.error) { %>
+            <div class="weather-body">
+                <p style="margin-block: 20px;"><%=error %></p>
+                <img src="images/404.png" class="weather-image" alt="error! location not found">
+            </div>
+        <% } %>
+    </div>
+
+    <script src="https://kit.fontawesome.com/4cbe53fc85.js" crossorigin="anonymous"></script>
+</body>
+</html>
