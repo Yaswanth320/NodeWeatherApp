@@ -19,7 +19,7 @@ Make sure you have Node.js and npm installed on your machine. You can download t
 -bash
 **
 
-git clone https://github.com/your-username/NodePackageInstaller.git
+git clone https://github.com/Yaswanth320/NodeWeatherApp.git
 
 cd NodePackageInstaller
 
